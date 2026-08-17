@@ -356,7 +356,7 @@ export function ComplaintDetails() {
                   <div>
                     <p className="text-xs text-gray-500">Name</p>
                     <p className="text-sm font-semibold text-gray-900">
-                      {reporter.companyName || `${reporter.firstName || reporter.name || ''} ${reporter.lastName || ''}`.trim() || 'Unknown'}
+                      {reporter.companyName || `${reporter.firstName || (reporter as any).name || ''} ${reporter.lastName || ''}`.trim() || 'Unknown'}
                     </p>
                   </div>
                   <div>

@@ -20,7 +20,14 @@ export function RequireAuth() {
 
   // While checking initial auth
   if (!isAuthenticated && isLoading) {
-    return <div className="h-screen w-screen flex items-center justify-center bg-[var(--color-bg-main)]">Loading session...</div>;
+    return (
+      <div className="h-screen w-screen flex items-center justify-center bg-[var(--color-bg-main)]">
+        <div className="animate-pulse flex flex-col items-center">
+          <img src="/favicon.svg" alt="Loading..." className="w-16 h-16 object-contain animate-pulse mb-4" />
+          <p className="text-gray-500 font-medium">Loading session...</p>
+        </div>
+      </div>
+    );
   }
 
   // If check failed or finished without auth

@@ -58,7 +58,7 @@ export function Complaints() {
       </div>
 
       <div className="space-y-4">
-        {filteredData.map((report) => (
+        {filteredData.map((report: any) => (
           <Card key={report.id} className="p-5 flex flex-col md:flex-row md:items-start justify-between border-0 shadow-sm ring-1 ring-gray-100 hover:shadow-md hover:-translate-y-0.5 hover:ring-gray-200 transition-all group space-y-4 md:space-y-0 animate-slide-down">
             <div className="flex items-start space-x-4 md:space-x-6 w-full md:w-3/4">
               <div className={`mt-1 flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center border text-sm font-bold shadow-sm transition-transform group-hover:scale-105 ${

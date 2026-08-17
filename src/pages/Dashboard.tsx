@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useGetDashboardMetricsQuery } from '../features/api/dashboardApi';
 import { Card } from '../components/ui/Card';
-import { Users, Shield, FileText, AlertCircle, Home, ShoppingBag, Wrench, ArrowRight, Activity, Plus, Calendar } from 'lucide-react';
+import { Users, Shield, FileText, AlertCircle, Home, ShoppingBag, Wrench, ArrowRight, Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Dashboard() {
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [startDate] = useState('');
+  const [endDate] = useState('');
   
   const { data, isLoading } = useGetDashboardMetricsQuery(
     (startDate || endDate) ? { startDate: startDate || undefined, endDate: endDate || undefined } : undefined
@@ -23,7 +23,7 @@ export function Dashboard() {
     );
   }
 
-  const metrics = data?.data?.data || data?.data || data || {};
+  const metrics: any = (data as any)?.data?.data || (data as any)?.data || data || {};
 
   const totalPending = Number(metrics.pendingContent?.total) || 0;
 

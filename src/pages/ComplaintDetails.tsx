@@ -397,7 +397,7 @@ export function ComplaintDetails() {
                     <div>
                       <p className="text-xs text-gray-500">Name / Company</p>
                       <p className="text-sm font-semibold text-gray-900">
-                        {targetUser.companyName || `${targetUser.firstName || targetUser.name || ''} ${targetUser.lastName || ''}`.trim() || 'Unknown'}
+                        {targetUser.companyName || `${targetUser.firstName || (targetUser as any).name || ''} ${targetUser.lastName || ''}`.trim() || 'Unknown'}
                       </p>
                     </div>
                     <div>

@@ -1,13 +1,21 @@
 import { baseApi } from './baseApi';
 
 export interface Reporter {
-  firstName: string;
-  lastName: string;
-  email: string;
+  firstName?: string;
+  lastName?: string;
+  name?: string;
+  companyName?: string;
+  email?: string;
+  phone?: string;
 }
 
 export interface Target {
   name?: string;
+  firstName?: string;
+  lastName?: string;
+  companyName?: string;
+  email?: string;
+  phone?: string;
   businessCategory?: string;
   [key: string]: any;
 }
